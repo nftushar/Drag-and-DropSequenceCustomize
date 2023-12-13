@@ -3,34 +3,34 @@ $(document).ready(function () {
     const sequenceCustomizer = $("#sequence-customizer");
 
     sequenceCustomizer.sortable({
-      connectWith: mainItemsContainer,
-      update: function (event, ui) {
-        updateSequenceOrder();
-      },
+        connectWith: mainItemsContainer,
+        update: function (event, ui) {
+            updateSequenceOrder();
+        },
     });
 
     function updateSequenceOrder() {
-      const mainItems = $(".main-item");
-      const sequenceItems = $(".sequence-item");
+        const mainItems = $(".main-item");
+        const sequenceItems = $(".sequence-item");
 
-      const updatedOrder = [];
+        const updatedOrder = [];
 
-      sequenceItems.each(function (index) {
-        const sequenceId = $(this).data("sequence-id");
-        const correspondingMainItem = findMainItemBySequenceId(mainItems, sequenceId);
+        sequenceItems.each(function (index) {
+            const sequenceId = $(this).data("sequence-id");
+            const correspondingMainItem = findMainItemBySequenceId(mainItems, sequenceId);
 
-        if (correspondingMainItem) {
-          correspondingMainItem.text(`Item ${index + 1}`);
-          updatedOrder.push(sequenceId);
-        }
-      });
+            if (correspondingMainItem) {
+                correspondingMainItem.appendTo(mainItemsContainer);  
+                updatedOrder.push(sequenceId);
+            }
+        });
 
-      console.log("Updated Sequence Order:", updatedOrder);
+        console.log("Updated Sequence Order:", updatedOrder);
     }
 
     function findMainItemBySequenceId(mainItems, sequenceId) {
-      return mainItems.filter(function () {
-        return $(this).data("sequence-id") === sequenceId;
-      });
+        return mainItems.filter(function () {
+            return $(this).data("sequence-id") === sequenceId;
+        });
     }
-  });
+});
