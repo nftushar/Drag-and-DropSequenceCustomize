@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drag and Drop Sequence Customize</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="main-items" class="sortable-list">
-        <div class="main-item" data-sequence-id="main-item-1">Item 1</div>
-        <div class="main-item" data-sequence-id="main-item-2">Item 2</div>
-        <div class="main-item" data-sequence-id="main-item-3">Item 3</div>
-        <!-- Add more main items as needed -->
-    </div>
 
-    <div id="sequence-customizer" class="sortable-list">
-        <div class="sequence-item" data-sequence-id="sequence-item-1">Item 1</div>
-        <div class="sequence-item" data-sequence-id="sequence-item-2">Item 2</div>
-        <div class="sequence-item" data-sequence-id="sequence-item-3">Item 3</div>
-        <!-- Add more sequence items as needed -->
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Drag and Drop Sequence Customize</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="script-jquery-ui.js"></script>
-</body>
+    <body>
+        <div id="main-items">
+            <div class="main-item" data-sequence-id="1">Item 1</div>
+            <div class="main-item" data-sequence-id="2">Item 2</div>
+            <div class="main-item" data-sequence-id="3">Item 3</div>
+            <!-- Add more main items as needed -->
+        </div>
+
+        <div id="sequence-customizer">
+            <div class="sequence-item" draggable="true" data-sequence-id="1">Item 1</div>
+            <div class="sequence-item" draggable="true" data-sequence-id="2">Item 2</div>
+            <div class="sequence-item" draggable="true" data-sequence-id="3">Item 3</div>
+            <!-- Add more sequence items as needed -->
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="script-jquery-ui.js"></script>
+    </body>
+
 </html>
