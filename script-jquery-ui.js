@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    // Load the content of main-items.html into #main-items
+    $("#main-items").load("main-items.html");
+
+    // Load the content of sequence-customizer.html into #sequence-customizer
+    $("#sequence-customizer").load("sequence-customizer.html");
+
     const mainItemsContainer = $("#main-items");
     const sequenceCustomizer = $("#sequence-customizer");
 
@@ -20,7 +26,7 @@ $(document).ready(function () {
             const correspondingMainItem = findMainItemBySequenceId(mainItems, sequenceId);
 
             if (correspondingMainItem) {
-                correspondingMainItem.appendTo(mainItemsContainer);  
+                correspondingMainItem.appendTo(mainItemsContainer);
                 updatedOrder.push(sequenceId);
             }
         });

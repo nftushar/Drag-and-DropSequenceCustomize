@@ -1,46 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Drag and Drop Sequence Customize</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Sequence Customize</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
 
-    <body>
-        <div id="main-items">
-            <div class="main-item" data-sequence-id="1">
-                <h1>Hello to me</h1>
-                <h1>Hello to me</h1>
-                <h1>Hello to me</h1>
-                <h1>Hello to me</h1>
-            </div>
-            <div class="main-item" data-sequence-id="2">
-                <h2>Hello to you</h2>
-                <h2>Hello to you</h2>
-                <h2>Hello to you</h2>
-                <h2>Hello to you</h2>
-                <h2>Hello to you</h2>
-            </div>
-            <div class="main-item" data-sequence-id="3">
-                <h3>Hello to other</h3>
-                <h3>Hello to other</h3>
-                <h3>Hello to other</h3>
-            </div>
-            <!-- Add more main items as needed -->
-        </div>
+<body>
+    <div id="main-items">
+        <!-- Include the content of main-items.html -->
+        <!-- Content will be loaded dynamically using jQuery.load() -->
+    </div>
 
-        <div id="sequence-customizer">
-            <div class="sequence-item" draggable="true" data-sequence-id="1">Me Item 1</div>
-            <div class="sequence-item" draggable="true" data-sequence-id="2">You Item 2</div>
-            <div class="sequence-item" draggable="true" data-sequence-id="3">Other Item 3</div>
-            <!-- Add more sequence items as needed -->
-        </div>
+    <div id="sequence-customizer">
+        <!-- Include the content of sequence-customizer.html -->
+        <!-- Content will be loaded dynamically using jQuery.load() -->
+    </div>
 
-        <script src="script-jquery-ui.js"></script>
-    </body>
+    <script src="script-jquery-ui.js"></script>
+    <script src="script.js"></script>
+</body>
 
 </html>
