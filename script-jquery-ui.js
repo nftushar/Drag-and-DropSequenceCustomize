@@ -3,16 +3,14 @@ $(document).ready(function () {
     $("#main-items").load("main-items.html");
 
     // Load the content of sequence-customizer.html into #sequence-customizer
-    $("#sequence-customizer").load("sequence-customizer.html");
-
-    const mainItemsContainer = $("#main-items");
-    const sequenceCustomizer = $("#sequence-customizer");
-
-    sequenceCustomizer.sortable({
-        connectWith: mainItemsContainer,
-        update: function (event, ui) {
-            updateSequenceOrder();
-        },
+    $("#sequence-customizer").load("sequence-customizer.html", function () {
+        // Initialize sortable after content is loaded
+        $("#sequence-customizer").sortable({
+            connectWith: "#main-items",
+            update: function (event, ui) {
+                updateSequenceOrder();
+            },
+        });
     });
 
     function updateSequenceOrder() {
@@ -26,7 +24,7 @@ $(document).ready(function () {
             const correspondingMainItem = findMainItemBySequenceId(mainItems, sequenceId);
 
             if (correspondingMainItem) {
-                correspondingMainItem.appendTo(mainItemsContainer);
+                correspondingMainItem.appendTo("#main-items");
                 updatedOrder.push(sequenceId);
             }
         });
@@ -36,7 +34,7 @@ $(document).ready(function () {
 
     function findMainItemBySequenceId(mainItems, sequenceId) {
         return mainItems.filter(function () {
-            return $(this).data("sequence-id") === sequenceId;
+            return $(this).data("sequence-id") == sequenceId;
         });
     }
 });
